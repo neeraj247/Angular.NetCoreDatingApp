@@ -12,21 +12,30 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { MessagesComponent } from './messages/messages.component';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { appRoutes } from './routes';
-
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, RegisterComponent, MessagesComponent, MemberListComponent, ListsComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent,
+    MessagesComponent,
+    MemberListComponent,
+    ListsComponent,
+    MemberCardComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [AuthService, ErrorInterceptorProvider],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
